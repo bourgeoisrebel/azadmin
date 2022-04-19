@@ -1,7 +1,4 @@
-# azadmin - container container Azure admin tools
-
-
-# docker
+# azadmin - container with Azure admin tools
 
 ## Installed in this image
 
