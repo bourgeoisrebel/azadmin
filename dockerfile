@@ -37,12 +37,12 @@ RUN apt-get update && apt-get install -y ca-certificates curl apt-transport-http
 RUN wget https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_amd64.zip --no-check-certificate && \
     unzip ./terraform_1.1.8_linux_amd64.zip -d /usr/local/bin/
 
-# Install powershell
-RUN apt-get update && apt-get install -y wget apt-transport-https software-properties-common ca-certificates && \
-    wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb --no-check-certificate  && \
-    dpkg -i packages-microsoft-prod.deb && \
-    apt-get update && apt-get install -y powershell && \
-    pwsh -command "Install-Module -Name Az -AllowClobber -Force -Confirm:\$false && Import-Module -Name Az"
+# # Install powershell
+# RUN apt-get update && apt-get install -y wget apt-transport-https software-properties-common ca-certificates && \
+#     wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb --no-check-certificate  && \
+#     dpkg -i packages-microsoft-prod.deb && \
+#     apt-get update && apt-get install -y powershell && \
+#     pwsh -command "Install-Module -Name Az -AllowClobber -Force -Confirm:\$false && Import-Module -Name Az"
 
 # install vim
 RUN apt-get update \
