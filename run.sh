@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run -it -v ~/git:/git azadmin
+docker run -it -v ~/git:/git -v ~/.ssh:/.ssh azadmin
