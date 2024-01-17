@@ -34,8 +34,8 @@ RUN apt-get update && apt-get install -y ca-certificates curl apt-transport-http
 
 # Install Terraform
     
-RUN wget https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_amd64.zip --no-check-certificate && \
-    unzip ./terraform_1.1.8_linux_amd64.zip -d /usr/local/bin/
+RUN wget https://releases.hashicorp.com/terraform/1.6.6/terraform_1.6.6_linux_amd64.zip --no-check-certificate && \
+    unzip ./terraform_1.6.6_linux_amd64.zip -d /usr/local/bin/
 
 # # Install powershell
 # RUN apt-get update && apt-get install -y wget apt-transport-https software-properties-common ca-certificates && \
@@ -48,18 +48,18 @@ RUN wget https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_am
 RUN apt-get update \
     && apt-get install vim -y
 
-# install helm
-RUN curl https://baltocdn.com/helm/signing.asc | apt-key add - && \
-    apt-get install apt-transport-https --yes && \
-    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list && \
-    apt-get update && \
-    apt-get install helm
+# # install helm
+# RUN curl https://baltocdn.com/helm/signing.asc | apt-key add - && \
+#     apt-get install apt-transport-https --yes && \
+#     echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list && \
+#     apt-get update && \
+#     apt-get install helm
 
 
-# install kubectl
-RUN apt-get update  && \
-    apt-get install -y apt-transport-https ca-certificates curl && \
-    curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg && \
-    echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list && \
-    apt-get update && \
-    apt-get install -y kubectl
+# # install kubectl
+# RUN apt-get update  && \
+#     apt-get install -y apt-transport-https ca-certificates curl && \
+#     curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg && \
+#     echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list && \
+#     apt-get update && \
+#     apt-get install -y kubectl
