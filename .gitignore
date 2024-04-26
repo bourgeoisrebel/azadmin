@@ -1,0 +1,55 @@
+# OS
+.DS_Store
+
+# IDE
+.idea/
+*.iml
+.vscode
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+errored.tfstate
+*.plan
+lambda_zip/
+ci_plan
+
+# Python
+.venv/
+__pycache__
+*.pyc
+*.pyc,cover
+.Python
+.tf_coverage
+output.txt
+error.txt
+venv/
+.coverage
+azure_venv/
+
+# Puppet and rspec
+Gemfile.lock
+.bundle
+vendor
+tests/puppet/spec/fixtures
+.vagrant/
+.tmp
+
+# Fab
+.fab_tasks~
+
+# Node modules
+node_modules
+package-lock.json
+
+target/
+dist/
+
+.scannerwork
+
+# Inspace
+inspec.lock
+
+# Files
+code.zip
