@@ -1,0 +1,4 @@
+paramiko==3.3.1
+pan-os-python==1.11.0
+pandevice==0.14.0
+xmltodict==0.13.0
