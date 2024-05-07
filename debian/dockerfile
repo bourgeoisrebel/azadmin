@@ -12,7 +12,7 @@ RUN bash /tmp/non-root-user.sh "${USERNAME}" "${USER_UID}" "${USER_GID}" && rm /
 
 ARG CI_JOB_TOKEN
 # Terraform versions
-ARG TERRAFORM_VERSION=1.7.4
+ARG TERRAFORM_VERSION=1.8.2
 ARG TF_DOCS_VERSION=0.16.0
 ARG TFLINT_VERSION=0.43.0
 ARG INSPEC_VERSION=5.12.2
@@ -88,18 +88,18 @@ RUN mkdir -p /tmp/dc-downloads \
     && curl -Lo /tmp/dc-downloads/terraform-docs https://github.com/terraform-docs/terraform-docs/releases/download/v${TF_DOCS_VERSION}/terraform-docs-v${TF_DOCS_VERSION}-$(uname | tr '[:upper:]' '[:lower:]')-${TARGETARCH} \
     && chmod +x /tmp/dc-downloads/terraform-docs \
     && mv /tmp/dc-downloads/terraform-docs /usr/local/bin \
-    # Install tfEnv
-    && wget -O /tmp/tfenv.tar.gz "https://github.com/tfutils/tfenv/archive/refs/tags/v${TFENV_VERSION}.tar.gz" \
-    && tar -C /tmp -xf /tmp/tfenv.tar.gz \
-    && mv "/tmp/tfenv-${TFENV_VERSION}/bin"/* /usr/local/bin/ \
-    && mkdir -p /usr/local/lib/tfenv \
-    && mv "/tmp/tfenv-${TFENV_VERSION}/lib" /usr/local/lib/tfenv/ \
-    && mv "/tmp/tfenv-${TFENV_VERSION}/libexec" /usr/local/lib/tfenv/ \
-    && mkdir -p /usr/local/share/licenses \
-    && mv "/tmp/tfenv-${TFENV_VERSION}/LICENSE" /usr/local/share/licenses/tfenv \
-    && rm -rf /tmp/tfenv* \
-    && mkdir /usr/local/lib/tfenv/versions \
-    && chown -R $USERNAME /usr/local/lib/tfenv/ \
+    # # Install tfEnv
+    # && wget -O /tmp/tfenv.tar.gz "https://github.com/tfutils/tfenv/archive/refs/tags/v${TFENV_VERSION}.tar.gz" \
+    # && tar -C /tmp -xf /tmp/tfenv.tar.gz \
+    # && mv "/tmp/tfenv-${TFENV_VERSION}/bin"/* /usr/local/bin/ \
+    # && mkdir -p /usr/local/lib/tfenv \
+    # && mv "/tmp/tfenv-${TFENV_VERSION}/lib" /usr/local/lib/tfenv/ \
+    # && mv "/tmp/tfenv-${TFENV_VERSION}/libexec" /usr/local/lib/tfenv/ \
+    # && mkdir -p /usr/local/share/licenses \
+    # && mv "/tmp/tfenv-${TFENV_VERSION}/LICENSE" /usr/local/share/licenses/tfenv \
+    # && rm -rf /tmp/tfenv* \
+    # && mkdir /usr/local/lib/tfenv/versions \
+    # && chown -R $USERNAME /usr/local/lib/tfenv/ \
     # Clean up downloaded files
     && apt-get autoremove -y \
     && apt-get clean -y \
@@ -111,7 +111,7 @@ RUN mkdir -p /tmp/dc-downloads \
 ENV TFENV_ROOT /usr/local/lib/tfenv
 
 # Default to latest; user-specifiable
-ENV TFENV_TERRAFORM_VERSION latest
+# ENV TFENV_TERRAFORM_VERSION latest
 
 # Install Python packages (ansible, service-deployment etc)
 COPY requirements.txt /tmp/requirements.txt
