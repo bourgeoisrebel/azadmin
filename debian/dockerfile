@@ -28,6 +28,10 @@ RUN mkdir -p /home/$USERNAME/.vscode-server/extensions \
     && chown -R $USERNAME \
     /home/$USERNAME/.vscode-server \
     /home/$USERNAME/.vscode-server-insiders
+    
+
+RUN mkdir -p /home/$USERNAME/.ssh 
+RUN chown -R $USERNAME /home/$USERNAME/.ssh
 
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \
