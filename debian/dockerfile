@@ -41,6 +41,7 @@ RUN apt-get update \
     icu-devtools \
     git\
     wget\
+    vim \
     openssh-client \
     less \
     curl \
