@@ -1,6 +1,10 @@
 # CIA Azure Containers
 
+Remember to create a ~/.terraformrc file with the PAT EG:
 
+credentials "gitlab.com" {
+token = "INSERT_HERE"
+}
 
 ## Getting started
 
