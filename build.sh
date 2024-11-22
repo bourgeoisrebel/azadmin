@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# keydest=assets/zscaler.pem
-# mkdir assets
-# security find-certificate -a -e support@zscaler.com -p >$keydest
+keydest=assets/zscaler.pem
+mkdir assets
+security find-certificate -a -e support@zscaler.com -p >$keydest
 
 retVal=$?
 if [ $retVal -ne 0 ]; then
